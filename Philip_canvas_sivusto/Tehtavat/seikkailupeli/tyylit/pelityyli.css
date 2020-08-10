@@ -1,0 +1,61 @@
+body{
+    background-color:cornflowerblue;
+    }
+    main{
+    width: 100%;
+    }
+    table {
+    border: #ca3a11 solid thick;
+    border-collapse: collapse;
+    }
+    thead{
+    border-bottom: black solid thick;
+    }
+    table, td {
+    padding: 0;
+    }
+    td {
+    width:40px;
+    height: 40px;
+    background-color: #ba9d37;
+    /*border: 2px solid darkgreen;*/
+    }
+    .nurmi {
+    background-image: url(../kuvat/ruoho.png);
+    }
+    .tie{
+    background-color:peru;
+    }
+    .kukka{
+    background-image:url(../kuvat/punainenKukka.png);
+    }
+    .hiekka{
+    background-color: #ba9d37;
+    }
+    .avain{
+    background-image:url(../kuvat/avaimet40.png);
+    background-position: 40px 0px;
+    }
+    .avain2{
+        background-image:url(../kuvat/avaimet40.png);
+        background-position: 0px 0px;
+        }
+        .avain.sumu, .avain2.sumu{
+        background-color: darkcyan;
+        background-image: url(../kuvat/sumu.png);
+        }
+        .raha{
+        background-image: url(../kuvat/kolikko.png);
+        }
+        .raha.sumu{
+        background-color: aqua;
+        background-image: url(../kuvat/sumu.png);
+        }
+        .sumu{
+        background-image:url(../kuvat/sumu.png);
+        }
+        .loppu{
+        padding: 20px;
+        font-size: 40px;
+        color:#ca3a11;
+        }

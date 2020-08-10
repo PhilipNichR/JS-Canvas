@@ -1,0 +1,33 @@
+.vastustajaylos, .vastustajaalas, .vastustajaoikea, .vastustajavasen{
+    width: 40px;
+    height: 40px;
+    animation-name: animaatio;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+    }
+    .vastustajaylos{
+    background-image: url(../kuvat/ukkoYlos.png);
+    }
+    .vastustajaalas{
+    background-image: url(../kuvat/ukkoAlas.png);
+    }
+    .vastustajavasen{
+    background-image: url(../kuvat/ukkoVasen.png);
+    }
+    .vastustajaoikea{
+    background-image: url(../kuvat/ukkoOikea.png);
+    }
+    .vastustajaoikea.sumu,
+    .vastustajaylos.sumu,
+    .vastustajaalas.sumu,
+    .vastustajavasen.sumu{
+    background-image: url(../kuvat/sumu.png);
+    }
+    @keyframes animaatio{
+    from { background-position:0px;}
+    to { background-position:-80px;}
+    }
+    .tormays {
+    background-image: url(../kuvat/loppu.png);
+    }

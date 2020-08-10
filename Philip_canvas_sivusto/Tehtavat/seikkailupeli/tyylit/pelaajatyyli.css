@@ -1,0 +1,25 @@
+.pelaajaylos{
+    background-image: url(../kuvat/autoylos.png);
+    }
+    .pelaajaalas{
+    background-image: url(../kuvat/autoalas.png);
+    }
+    .pelaajavasen{
+    background-image: url(../kuvat/autovasen.png);
+    }
+    .pelaajaoikea{
+    background-image: url(../kuvat/autoanimaatio.png);
+    width: 40px;
+    height: 40px;
+    animation-name: autoOikealle;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(2);
+    animation-iteration-count: infinite;
+    }
+    @keyframes autoOikealle{
+    from { background-position:0px;}
+    to { background-position:-80px;}
+    }
+    .tormays {
+    background-image: url(../kuvat/loppu.png);
+    }

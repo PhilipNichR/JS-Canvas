@@ -1,0 +1,62 @@
+.ruoho {
+    background-image: url('../Kuvat/ruoho.jpg');
+    background-color: green;
+}
+
+.punainenKukka {
+    background-image: url('../Kuvat/punainenKukka.jpg');
+    background-color: green;
+}
+
+.pinkkiKukka {
+    background-image: url('../Kuvat/pikkiKukka.jpg');
+    background-color: green;
+}
+
+.piilossa {
+    background-color: green;
+
+}
+
+.kolikko {
+    background-image: url('../Kuvat/kolikko.jpg');
+}
+
+.pata::before {
+    content: "\2660";
+    color: black;
+}
+
+.risti::before {
+    content: "\2663";
+    color: black;
+}
+
+.hertta::before {
+    content: "\2665";
+    color: red;
+}
+
+.ruutu::before {
+    content: "\2666";
+    color: red;
+}
+
+.saatu{
+    background-color: red;
+}
+
+table,
+td {
+    border-collapse: collapse;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    padding: 0;
+    border: 2px solid rgb(87, 81, 8);
+    text-align: center;
+    background-color: green;
+}

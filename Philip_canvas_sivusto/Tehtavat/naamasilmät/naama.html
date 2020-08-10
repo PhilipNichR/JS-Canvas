@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Smiling Face</title>
+<meta charset="utf-8" />
+<style>
+div#main {
+   margin:0 auto;
+}
+div.title {
+   font-size: 40px;
+   font-family:monospace;
+}
+</style>
+<script src="jquery1.10.min.js"></script>
+</head>
+<body>
+   <div id="main">
+     <canvas height="600" width="600" id="face">
+     </canvas>
+   </div>
+
+<script>
+var canvas = null;   //The canvas object
+var context = null;   //The canvas context
+var c_width;   //Canvas width
+var c_height;   //Canvas height
+function piirra(x,y,leveys,korkeus,vari){
+        context.fillStyle=vari;
+        context.fillRect(x,y,leveys,korkeus);
+    }
+
+initFace();
+
+function initFace() {
+   canvas = document.getElementById("face");
+   context = canvas.getContext("2d");
+
+   c_width = canvas.offsetWidth;
+   c_height = canvas.offsetHeight;
+
+   //draw the face
+   drawSmileyFace();
+}
+
+function drawSmileyFace() {
+   drawFace();
+   drawLeftEye();
+   drawRightEye();
+   drawNose();
+   drawSmile();
+}
+
+function drawFace() {
+   // face
+   context.strokeStyle = '#000000';
+   context.fillStyle = 'green';
+   context.fillRect(20, 20, 250, 250);
+}
+function drawLeftEye(dx, dy) {
+   x = 75;
+   y = 100;
+
+   dx = dx || 0;
+   x1 = x + parseFloat(dx);
+
+   dy = dy || 0;
+   y1 = y + parseFloat(dy);
+
+   // left eye
+   context.beginPath();
+   context.arc(x, y, 25, 0, degreesToRadians(360), true);
+   context.fillStyle = "#FFFFFF";
+   context.fill();
+   context.strokeStyle = '#000000';
+   context.stroke();
+   //inner left eye
+   context.beginPath();
+   context.arc(x1, y1, 10, 0, degreesToRadians(360), true);
+   context.fillStyle = "#000000";
+   context.fill();
+   context.strokeStyle = '#000000';
+   context.stroke();
+}
+
+function drawRightEye(dx, dy) {
+   x = 200;
+   y = 100;
+
+   dx = dx || 0;
+   x1 = x + parseFloat(dx);
+
+   dy = dy || 0;
+   y1 = y + parseFloat(dy);
+
+   // right eye
+   context.beginPath();
+   context.arc(x, y, 25, 0, degreesToRadians(360), true);
+   context.fillStyle = "#FFFFFF";
+   context.fill();
+   context.strokeStyle = '#000000';
+   context.stroke();
+   //inner right eye
+   context.beginPath();
+   context.arc(x1, y1, 15, 0, degreesToRadians(360), true);
+   context.fillStyle = "#000000";
+   context.fill();
+   context.strokeStyle = '#000000';
+   context.stroke();
+}
+function drawNose() {
+    context.strokeStyle = '#000000';
+   context.fillStyle = '#FFFFFF';
+   context.fillRect(130, 130, 20, 20);
+}
+function drawSmile() {
+   context.beginPath();
+    piirra(60,200,170,10,'red');
+    context.fill();
+    context.stroke();
+}
+
+function getMousePos(canvas, evt) {
+   var rect = canvas.getBoundingClientRect();
+   return {
+     x: evt.clientX - rect.left,
+     y: evt.clientY - rect.top
+   };
+}
+canvas.addEventListener('mousemove', function(evt) {
+   var mousePos = getMousePos(canvas, evt);
+   context.clearRect(0, 0, canvas.width, canvas.height);
+   var eyeY = 250;     //distance from top
+   var leyeX = 200;   //distance of left eye from left
+   var reyeX = 400;   //distance of right eye from left
+   var ldx = 0;     //deviation of left eye from left
+   var rdx = 0;     //deviation of right eye from left
+   var ldy = 0;     //deviation of left eye from top
+
+   if (eyeY > mousePos.y) {
+     ldy = 100 - (mousePos.y/eyeY * 100);
+     ldy = (ldy * 5) / 100;
+     ldy = 0 - ldy;
+   } else {
+     ldy = 100 - ((c_height - mousePos.y)/(c_height - eyeY) * 100);
+     ldy = (ldy * 5) / 100;
+   }
+
+   if (leyeX < mousePos.x) {
+    //left eye
+    ldx = 200 - ((c_width - mousePos.x)/(c_width - leyeX) * 100);
+    ldx = (ldx * 5) / 100;
+
+    //right eye
+    rdx = 100 - ((c_width - mousePos.x)/(c_width - reyeX) * 100);
+    rdx = (rdx * 5) / 100;
+   } else {
+    //left eye
+    ldx = 100 - (mousePos.x/leyeX) * 100;
+    ldx = (ldx * 5) / 100;
+    ldx = 0 - ldx;
+
+    //right eye
+    rdx = 100 - (mousePos.x/reyeX) * 100;
+    rdx = (rdx * 5) / 100;
+    rdx = 0 - rdx;
+   }
+
+   drawFace();
+   drawLeftEye(ldx, ldy);
+   drawRightEye(rdx, ldy);
+   drawNose();
+   drawSmile();
+
+}, false);
+
+function degreesToRadians(degrees) {
+   radians = (degrees * Math.PI)/180;
+   return radians;
+}
+
+</script>
+
+</body>
+</html>

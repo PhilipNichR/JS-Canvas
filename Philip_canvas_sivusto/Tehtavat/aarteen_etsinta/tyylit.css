@@ -1,0 +1,41 @@
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    padding: 0;
+    background-color: green;
+    text-align: center;
+}
+
+
+.kukka {
+    background-image: url("kukka.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.kukka2 {
+    background-image: url("kukka2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ruoho {
+    background: url("ruoho.png");
+    background-repeat: no-repeat;
+     background-position: center;
+    
+}
+.aarre{
+    background-image: url("aarre.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.tausta{
+    background-color: coral;
+    background-repeat: no-repeat;
+    background-position: center;
+}

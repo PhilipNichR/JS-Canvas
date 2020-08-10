@@ -1,0 +1,46 @@
+table{
+    border-collapse: collapse;
+}
+
+td{
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    padding: 0;
+    border: 1px solid black;
+    background-color: oldlace;
+    text-align: center;
+}
+
+#painikkeet .tausta{
+    background-color: red;
+}
+
+.pata::before{
+    content:"\2660";
+    color:black;
+}
+
+.risti::before{
+    content:"\2663";
+    color:black;
+}
+
+.hertta::before{
+    content:"\2665";
+    color:red;
+}
+
+.ruutu::before{
+    content:"\2666";
+    color:red;
+}
+
+.kukka::before{
+    background-color: blue;
+}
+
+.naama{
+    background-color: green;
+}
+

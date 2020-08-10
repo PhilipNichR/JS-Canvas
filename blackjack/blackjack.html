@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Green Blackjackk</title>
+    <link rel="stylesheet" href="tyyli.css" type="text/css"></link>
+    <script src="blackjack.js"></script>
+</head>
+<body>
+    <table>
+    
+    <tr id="kortti">
+    </tr><br>
+    <tr id="dkortti"></tr>
+    <button class="button" onclick="ADDSCORE()"><span>Jaa kortit</span></button>
+    <button class="button" onclick="HIT()"><span>Lisää kortti</span></button>
+    <button class="button" onclick="STAY()"><span>Pelaa</span></button>
+    <button class="button" onclick="REPEAT()"><span>Uudelleen</span></button>
+    <span id="winner"></span>
+    <div id="bet">
+            <input id="text2" type="number" min="10" max="9999"></input>
+            <button  class="button" id="buttonX" onclick="BET()"><span>Bet</span></button>
+            <span id="q1"></span>
+    </div>
+
+    <p>Pelaajan kortit:     <span id="playersc"></span></p>
+    <p>Pelaajan pisteet:    <span id="playerscr"></span></p>
+    <p>Jakajan kortit:    <span id="dealersc"></span></p>
+    <p>Jakajan ensimmäisen kortin pisteet:   <span id="dealerscr"></span></p>
+    <p>Rahat: <span id="praha"></span></p>
+    <p>Veto: <span id="bett"></span></p>
+    <h2 id=pel>Pelaajan kortit</h2>
+    <h2 id="dil">Jakajan kortit</h2>
+</table>
+</body>
+</html>
